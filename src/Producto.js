@@ -4,7 +4,7 @@ class Producto{
         this.precio = precio;
         this.sucursal = sucursal;
 
-    }
+    };
     
     
 }
