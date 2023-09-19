@@ -4,7 +4,7 @@ let productos = [];
 
 const listaProductos = document.querySelector("tbody");
 
-
+//const listaProductos = document.getElementById("cuerpoTabla");
 document.getElementById("saveProduct").onclick = () => {
     let nuevoProducto = new Producto(
         document.getElementById("nombreP").value,
@@ -27,5 +27,11 @@ document.getElementById("saveProduct").onclick = () => {
     let suc = document.createElement("td");
     suc.textContent = nuevoProducto.sucursalP;
     listaProductos.insertAdjacentElement("beforeend", suc);
+   
 
 };
+const limpiarCampos=()=>{
+    document.getElementById("nombreP").value="";
+   // document.getElementById("precioP").value=;
+    document.getElementById("sucursalP").value="";
+}
