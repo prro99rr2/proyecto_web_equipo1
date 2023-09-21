@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparador de precios</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1 class="titulo">Comparador de precios</h1>
+    <div class="container">
+        <form id="comparador-de-precios">
+            <p class="Pe"> Producto
+                <input type="text" id="producto" name="producto" placeholder="Ingrese nombre de producto" required>
+            </p>
+            <p class="Pe"> Precio:
+                <input type="number" id="precio" name="precio" placeholder="Ingrese precio del producto" required>
+            </p>
+            <p class="Pa">
+                Sucursal
+                <input type="text" id="sucursal" name="nombre-de-sucursal" placeholder="Ingrese nombre de la sucursal" required>
+            </p>
+            <button type="button" onclick="guardarProducto()">Guardar Producto</button>
+            <button type="button" onclick="listarProductos()">Listar Productos</button>
+            <button type="button" onclick="productoMasBarato()">Producto más Barato</button>
+
+            <h2>Lista de Productos</h2>
+            <ul id="listaProductos"></ul>
+
+            <h2>Producto con menor precio</h2>
+            <p id="productoMasBarato"></p>
+        </form>
+    </div>
+    
+    <script src="../src/index.js"></script>
+    <script src="../src/producto.js"></script>
+</body>
+</html>

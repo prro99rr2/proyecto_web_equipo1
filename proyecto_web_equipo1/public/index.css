@@ -1,0 +1,59 @@
+body {
+    font-family: "Pacifico", cursive;
+    background-image: url('../Imagen/fondoWebSuper.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #969696;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffffde;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(150, 248, 105, 0.8);
+}
+
+.titulo {
+    text-align: center;
+    color: #000000;
+    background: linear-gradient(to bottom, #458bcc, #75AADB, #FFFFFF, #FFFFFF, #75AADB, #458bcc);
+}
+
+form {
+    margin-top: 30px;
+}
+
+.Pe, .Pa {
+    margin: 10px 0;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 95%;
+    padding: 20px;
+    margin: 5px 0;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+
+button[type="button"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button[type="button"]:hover {
+    background-color: #00ff0d;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #000000;
+}
