@@ -1,14 +1,13 @@
-
 body {
     font-family: "Pacifico", cursive;
-    background-image: url(../imagen/PreciosCuidados.jpg);
+   background-image:url("../Imagen/fondoWebSuper.png");
     background-repeat: no-repeat;
     background-size: cover; /* Esto ajustará la imagen al tamaño de la ventana del navegador */
     background-attachment: fixed; /* Esto hará que la imagen de fondo esté fija mientras se desplaza la página */
     background-color: #969696; /* Esto se mostrará si la imagen no se carga o mientras carga */
-
-
-
+   
+    
+    
 
 }
 
@@ -26,7 +25,7 @@ body {
     text-align: center;
     color: #000000;
     background: linear-gradient(to bottom, #458bcc, #75AADB, #FFFFFF, #FFFFFF, #75AADB, #458bcc);
-
+   
 }
 
 
@@ -48,7 +47,7 @@ input[type="number"] {
     border-radius: 10px;
 }
 
-button[type="submit"] {
+button[type="button"] {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -58,7 +57,7 @@ button[type="submit"] {
     border-radius: 3px;
 }
 
-button[type="submit"]:hover {
+button[type="button"]:hover {
     background-color: #00ff0d;
 }
 
