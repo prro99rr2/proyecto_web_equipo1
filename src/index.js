@@ -1,47 +1,63 @@
-import producto from "./Producto.js";
+import Producto from "./Producto.js";
 let productos = [];
-document.getElementById("GP").onclick = () =>{
-
-    let productoUno = new producto (
-        Document.getElementById("producto").value,
-        Number(document.getElementById("precio").value),
-        Document.getElementById("sucursal").value)
 
 
-    guardarProducto(productoUno);
+const listaProductos = document.querySelector("tbody");
 
-    document.getElementById("producto").value = "";
-    document.getElementById("precio").value = "";
-    document.getElementById("sucursal").value = "";
-
-    const almacenProductos = [];
-
-    almacenProductos.push(producto01);
-    almacenProductos.push(producto02);
-    almacenProductos.push(producto03);
-    almacenProductos.push(producto04);
-    almacenProductos.push(producto05);
-
-    document.getElementById("np01").innerHTML = almacenProductos[0].producto;
-    document.getElementById("pr01").innerHTML = almacenProductos[0].precio;
-    document.getElementById("su01").innerHTML = almacenProductos[0].sucursal;
-
-    document.getElementById("np01").innerHTML = almacenProductos[1].producto;
-    document.getElementById("pr01").innerHTML = almacenProductos[1].precio;
-    document.getElementById("su01").innerHTML = almacenProductos[1].sucursal;
-
-    document.getElementById("np01").innerHTML = almacenProductos[2].producto;
-    document.getElementById("pr01").innerHTML = almacenProductos[2].precio;
-    document.getElementById("su01").innerHTML = almacenProductos[2].sucursal;
+//const listaProductos = document.getElementById("cuerpoTabla");
+document.getElementById("saveProduct").onclick = () => {
     
-    document.getElementById("np01").innerHTML = almacenProductos[3].producto;
-    document.getElementById("pr01").innerHTML = almacenProductos[3].precio;
-    document.getElementById("su01").innerHTML = almacenProductos[3].sucursal;
+    alert("producto agregado"); // aviso de que se agrego el producto.
+    
+    let nuevoProducto = new Producto(
+        document.getElementById("nombreP").value,
+        Number(document.getElementById("precioP").value),
+        document.getElementById("sucursal").value); 
+    productos.push(nuevoProducto);
+    
+    //luego de guardar producto, se reinician los campos.
+    document.getElementById("nombreP").value="";
+    document.getElementById("precioP").value="";
+    document.getElementById("sucursal").value="";
 
-    document.getElementById("np01").innerHTML = almacenProductos[4].producto;
-    document.getElementById("pr01").innerHTML = almacenProductos[4].precio;
-    document.getElementById("su01").innerHTML = almacenProductos[4].sucursal;
+    console.log(productos.length);
+    console.log(productos);
+    
+    let tr=document.createElement("tr");
+    //el metodo appendChild permite agregar un elemento 
+    listaProductos.appendChild(tr);
+    
+    let nomP = document.createElement("td");
+    nomP.textContent = nuevoProducto.nombreP;
+    
+    listaProductos.insertAdjacentElement("beforeend", nomP);
 
+    let preP = document.createElement("td");
+    preP.textContent = nuevoProducto.precioP;
+    listaProductos.insertAdjacentElement("beforeend", preP);
 
+    let suc = document.createElement("td");
+    suc.textContent = nuevoProducto.sucursal;
+    listaProductos.insertAdjacentElement("beforeend", suc);
+
+    
 }
 
+const productoMenor = document.querySelector("rbody");
+   
+document.getElementById("productoBarato").onclick = () =>{
+    if (productos.length === 0) {
+        alert("No hay productos para comparar.");
+        return;
+    }
+
+    let productoBarato = productos[0]; // Inicializamos con el primer producto (0)
+    for (const producto of productos) {
+        if (producto.precio < productoBarato.precio) {
+            productoBarato = producto;
+        }
+    }
+
+    document.getElementById("productosMasBarato").textContent = `Producto más barato: ${productoBarato.nombreP}, Precio: ${productoBarato.precioP}, Sucursal: ${productoBarato.sucursal}`;
+
+}
