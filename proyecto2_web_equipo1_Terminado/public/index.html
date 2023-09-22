@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 class="titulo">Comparador de precios </h1>
+  <div class="container">
+
+    <form id="comparador de precios ">
+      <p class="Pe"> Producto
+        <input type="text" id="nombreP" placeholder="Ingrese nombre del producto" required>
+      </p>
+      <p class="Pe"> Precio:
+        <input type="number" id="precioP" placeholder="precio del producto" min="0" required>
+      </p>
+      <p class="Pa">
+        Sucursal
+        <input type="text" id="sucursal" placeholder="ingrese nombre del comercio" required>
+      </p>
+      
+      <button type="button" id="saveProduct"  >Guardar Producto</button>
+      <button type="button" id="productoBarato">Producto mas Barato</button>
+
+    </form>
+    <h2>Lista de Productos</h2>
+    <table class="table table-striped" id="tabla">
+      <thead>
+        <tr>
+
+          <th scope="col">Nombre del producto</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Sucursal</th>
+        </tr>
+
+      </thead>
+      <tbody id="cuerpoTabla">
+
+      </tbody>
+    </table>
+    <h2>Productos con menor precio</h2>
+    <ul id="productosMasBarato"></ul>
+    
+  </div>
+  <script type="module" src="../src/index.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
