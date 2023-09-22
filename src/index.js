@@ -53,7 +53,7 @@ document.getElementById("productoBarato").onclick = () =>{
 
     let productoBarato = productos[0]; // Inicializamos con el primer producto (0)
     for (const producto of productos) {
-        if (producto.precio < productoBarato.precio) {
+        if (producto.precioP < productoBarato.precioP) {
             productoBarato = producto;
         }
     }
