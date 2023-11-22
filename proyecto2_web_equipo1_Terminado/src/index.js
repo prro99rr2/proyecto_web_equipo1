@@ -6,7 +6,7 @@ let productosMasBaratos = [];
 
 
 const listaProductos = document.querySelector("tbody");
-
+const listaBaratos = document.querySelector("ul");
 //const listaProductos = document.getElementById("cuerpoTabla");
 document.getElementById("saveProduct").onclick = () => {
 
@@ -56,10 +56,12 @@ document.getElementById("productoBarato").onclick = () => {
     }
 
     const listaProductos = document.getElementById("productosMasBarato");
-    listaProductos.innerHTML = ""; // Limpiar la lista antes de mostrar los productos
+     // Limpiar la lista antes de mostrar los productos
+     listaBaratos.innerHTML = "";
 
     //productosMasBaratos = productos.slice();
     listaMasBaratos();
+    
 
     for (const producto of productosMasBaratos) {
         const li = document.createElement("li");
@@ -67,7 +69,7 @@ document.getElementById("productoBarato").onclick = () => {
         li.textContent = `Producto: ${producto.nombreP}, Precio: ${producto.precioP}, Sucursal: ${producto.sucursal}`;
         listaProductos.appendChild(li);
     }
-
+    
 }
 
 
@@ -107,35 +109,16 @@ const listaMasBaratos = () => {
     let filtrarRepetidos=[];
     let minimo=Infinity;
     
-   
+    
     //recorre el arreglo que tiene los nombres de los productos sin repetidos
     for (let i = 0; i < nombresDeProductos.length; i++) {
        
-        filtrarRepetidos = obtenerRepetidos(nombresDeProductos[i]).slice();
-        
-        filtrarRepetidos.sort((a, b) => {
-            console.log("llegamos2?");
-            if (b.precioP === a.precioP) {
-                return 0
-            }
-            if (a.precioP < b.precioP) {
-                return -1
-            }
-            return 1
-        });
+        let filtrarRepetidos = obtenerRepetidos(nombresDeProductos[i]).slice();
+        //ordena los elemntos obtenidos
+        filtrarRepetidos.sort(function(a, b){return a.precioP - b.precioP});
         console.log(filtrarRepetidos);
-       // minimo = filtrarRepetidos[0].precioP;
-       
-        
-    filtrarRepetidos.filter(function (element) {
-        if(element.precioP <= minimo){
-            minimo=element.precioP;
-            productosMasBaratos.push(element)
-            return element;
-           
-        }
-        
-    });
+        //minimo = filtrarRepetidos[0].precioP;
+        productosMasBaratos.push(filtrarRepetidos[0]);
     
 
     };
